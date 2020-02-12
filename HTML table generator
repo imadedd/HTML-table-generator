@@ -1,0 +1,33 @@
+<script type="text/javascript">
+function createTable()
+{
+    var nbr_rows = document.getElementById('rows').value;
+    var nbr_cols = document.getElementById('cols').value;
+    var header = '<table border="1">\n';
+    var body = '';
+
+    for( var i=0; i<nbr_rows;i++)
+    {
+        body += '<tr>';
+        for( var j=0; j<nbr_cols;j++)
+        {
+            body += '<td>';
+            body +=  +i+1 ;
+            body += '</td>'
+        }
+        body += '</tr>\n';
+    }
+    var footer = '</table>';
+    document.getElementById('wrapper').innerHTML = header + body + footer;
+}
+</script>
+</head>
+
+<body>
+<form name="tabletable">
+<label>Number of rows: <input type="text" name="rows" id="rows"/></label><br />
+<label>Number of columns: <input type="text" name="cols" id="cols"/></label><br/>
+<input name="generate" type="button" value="Submit" onclick='createTable();'/>
+</form>
+
+<div id="wrapper"></div>
